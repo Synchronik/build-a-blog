@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <body>
+    <h1>Blahg!!</h1>
+
+    <a href='/submit'><button>Create a new post!</button></a>
+
+    {% for blog in blogs %}
+      <div class="blog">
+        <a href="/blog/{{blog.key().id()}}" class="blog-title">{{blog.title}}</a>
+        <pre class="blog-content">{{blog.content}}</pre>
+      </div>
+    {% endfor %}
+
+  </body>
+
+  {% endblock %}
